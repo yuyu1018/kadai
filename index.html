@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>京都ラーメン</title>
+  <link rel="stylesheet" href="./css/common.css" />
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <!-- ヘッダー -->
+  <header>
+    <div class="header-inner flex flex-align-center">
+      <div class="header-logo">
+        <img src="./img/logo.png" alt="ロゴ" />
+      </div>
+
+      <nav class="header-menu flex flex-align-center">
+        <ul class="flex">
+          <li><a href="#">ホーム</a></li>
+          <li><a href="#">メニュー</a></li>
+          <li><a href="#">店舗検索</a></li>
+          <li><a href="#">採用情報</a></li>
+          <li><a href="#">新着情報</a></li>
+        </ul>
+        <div class="online-link">
+          <a href="#" class="flex flex-align-center">
+            <img src="./img/shopping-cart.png" alt="ショッピングカート" />
+            <span>オンラインショップ</span>
+          </a>
+        </div>
+      </nav>
+
+      <!-- ハンバーガーボタン -->
+      <button class="hamburger" aria-label="メニューを開く" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <div class="drawer">
+      <ul>
+        <li><a href="#">ホーム</a></li>
+        <li><a href="#">メニュー</a></li>
+        <li><a href="#">店舗検索</a></li>
+        <li><a href="#">採用情報</a></li>
+        <li><a href="#">新着情報</a></li>
+      </ul>
+      <div class="drawer-online">
+        <a href="#" class="flex flex-align-center flex-center">
+          <img src="./img/shopping-cart.png" alt="ショッピングカート" />
+          <span>オンラインショップ</span>
+        </a>
+      </div>
+    </div><!-- /.drawer -->
+
+    <div class="drawer-overlay"></div>
+  </header>
+
+  <main>
+    <!-- FV -->
+    <section class="fv">
+      <div class="fv-inner flex flex-align-center">
+        <div class="fv-img">
+          <img src="./img/fv-bowl.png" alt="ラーメンのお椀" />
+        </div>
+
+        <div class="fv-text">
+          <h1>どこにもない味</h1>
+          <p>
+            テキストが入ります。テキストが入ります。テキストが入ります。<br />
+            テキストが入ります。テキストが入ります。テキストが入ります。<br />
+            テキストが入ります。テキストが入ります。テキストが入ります。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ニュース -->
+    <section class="news">
+      <div class="news-inner flex flex-between inner">
+        <div class="news-container flex">
+          <div class="news-title flex flex-align-center flex-center">
+            <h2 class="en">NEWS</h2>
+          </div>
+
+          <div class="news-list">
+            <ul>
+              <li>
+                <a href="#" class="flex">
+                  <time datetime="2019-07-26">2019/07/26</time>
+                  <span>テキストテキストテキストテキスト</span>
+                </a>
+              </li>
+
+              <li>
+                <a href="#" class="flex">
+                  <time datetime="2018-07-26">2018/07/26</time>
+                  <span>テキストテキストテキストテキスト</span>
+                </a>
+              </li>
+
+              <li>
+                <a href="#" class="flex">
+                  <time datetime="2018-07-26">2018/07/26</time>
+                  <span>テキストテキストテキストテキスト</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="readmore">
+          <a href="#" class="flex flex-align-center flex-center">
+            <span class="link-text en">READ MORE</span>
+            <span class="arrow"></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- スライダー -->
+    <div class="slider">
+      <div class="slider-inner inner">
+        <button class="slider-arrow arrow-prev" id="prev" aria-label="前へ">
+          <span class="link-more-arrow"></span>
+        </button>
+
+        <div class="slider-track-container">
+          <div class="slider-track" id="track">
+            <div class="banner">
+              <img src="https://picsum.photos/seed/banner1/800/600" alt="バナー1" /><span>バナー1</span>
+            </div>
+            <div class="banner">
+              <img src="https://picsum.photos/seed/banner2/800/600" alt="バナー2" /><span>バナー2</span>
+            </div>
+            <div class="banner">
+              <img src="https://picsum.photos/seed/banner3/800/600" alt="バナー3" /><span>バナー3</span>
+            </div>
+            <div class="banner">
+              <img src="https://picsum.photos/seed/banner4/800/600" alt="バナー4" /><span>バナー4</span>
+            </div>
+            <div class="banner">
+              <img src="https://picsum.photos/seed/banner5/800/600" alt="バナー5" /><span>バナー5</span>
+            </div>
+          </div>
+        </div>
+
+        <button class="slider-arrow arrow-next" id="next" aria-label="次へ">
+          <span class="link-more-arrow"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- 店舗検索 -->
+    <section class="store media-section">
+      <div class="media-inner flex flex-align-center">
+        <div class="media-img">
+          <img src="./img/store-img.jpg" alt="店舗検索画像" />
+        </div>
+
+        <div class="media-content">
+          <div class="section-title">
+            <span class="section-title-sub en">STORE SEARCH</span>
+            <h2 class="section-title-main">店舗検索</h2>
+          </div>
+
+          <div class="media-info">
+            <p class="ui">
+              テキストが入ります。テキストが入ります。テキストが入ります。
+              テキストが入ります。テキストが入ります。テキストが入ります。
+              テキストが入ります。テキストが入ります。テキストが入ります。
+            </p>
+          </div>
+
+          <div class="link-more">
+            <a href="#">
+              <span class="link-more-text en">more</span>
+              <span class="link-more-arrow"></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- オンラインショップ -->
+    <section class="online media-section media-section-reverse">
+      <div class="media-inner flex flex-align-center">
+        <div class="media-img">
+          <img src="./img/online-img.jpg" alt="オンラインショップ画像" />
+        </div>
+
+        <div class="media-content">
+          <div class="section-title">
+            <span class="section-title-sub en">ONLINE SHOP</span>
+            <h2 class="section-title-main">オンラインショップ</h2>
+          </div>
+
+          <div class="media-info">
+            <p class="ui">
+              テキストが入ります。テキストが入ります。テキストが入ります。
+              テキストが入ります。テキストが入ります。テキストが入ります。
+              テキストが入ります。テキストが入ります。テキストが入ります。
+            </p>
+          </div>
+
+          <div class="link-more">
+            <a href="#">
+              <span class="link-more-text en">more</span>
+              <span class="link-more-arrow"></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 採用情報 -->
+    <section class="recruit">
+      <div class="recruit-inner inner">
+        <div class="recruit-card flex flex-between">
+          <div class="section-title">
+            <span class="section-title-sub en">RECRUIT</span>
+            <h2 class="section-title-main">採用情報</h2>
+          </div>
+
+          <div class="recruit-text">
+            <p class="ui">
+              正社員・アルバイトを募集しています。<br />
+              丁寧に教えていきますので初心者の方も安心です。
+            </p>
+          </div>
+
+          <div class="link-more">
+            <a href="#">
+              <span class="link-more-text en">more</span>
+              <span class="link-more-arrow"></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main><!-- /main -->
+
+  <footer>
+    <div class="footer-inner inner">
+      <div class="footer-logo">
+        <a href="#">
+          <img src="./img/logo.png" alt="京都ラーメン" />
+        </a>
+      </div>
+
+      <nav class="footer-nav">
+        <ul class="ui flex flex-center">
+          <li><a href="#">TOP</a></li>
+          <li><a href="#">メニュー</a></li>
+          <li><a href="#">店舗検索</a></li>
+          <li><a href="#">採用情報</a></li>
+          <li><a href="#">新着情報</a></li>
+          <li><a href="#">会社概要</a></li>
+          <li><a href="#">オンラインショップ</a></li>
+        </ul>
+      </nav>
+
+      <small class="footer-copy ui">Copyright &copy; 2018 Kyoto Ramen. All rights reserved.</small>
+    </div>
+  </footer><!-- /footer -->
+
+  <script src="./js/slider.js"></script>
+  <script src="./js/hamburger.js"></script>
+</body>
+
+</html>

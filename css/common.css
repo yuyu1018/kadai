@@ -1,0 +1,496 @@
+@charset "utf-8";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  overflow: auto;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  color: #222;
+  line-height: 1.8;
+  font-weight: 500;
+  -webkit-font-smoothing: antialiased;
+  font-family:
+    "游ゴシック", "Yu Gothic", YuGothic, "メイリオ", "Meiryo", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka,
+    sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+dl,
+dd,
+ul,
+form,
+textarea,
+figure {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+}
+
+article,
+aside,
+dialog,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section {
+  display: block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+
+/* clearfix 回り込み解除 ------------------------ */
+.clearfix:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+/* 共通 ------------------------ */
+p {
+  margin: 0;
+}
+
+span {
+  line-height: normal;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+a:not(.fade),
+.anime {
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+a:active,
+a:hover {
+  color: #f00;
+}
+
+a:focus {
+  outline: none;
+}
+
+strong {
+  font-size: 1.2em;
+}
+
+em {
+  font-style: normal;
+  font-weight: bold;
+}
+
+fieldset {
+  border: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+map area:focus,
+map area:active {
+  outline: none;
+  border: 0;
+}
+
+ul {
+  list-style-type: none;
+}
+
+ul.disc,
+ul.square {
+  padding-left: 1.3em;
+}
+
+.disc li {
+  list-style-type: disc;
+}
+
+.square li {
+  list-style-type: square;
+}
+
+.decimal li {
+  list-style-type: decimal;
+}
+
+ul.kome li {
+  text-indent: -1em;
+  margin-left: 1em;
+}
+
+ul.kome li::before {
+  content: "※";
+}
+
+ol.kome {
+  padding-left: 5px;
+}
+
+ol.kome li {
+  text-indent: -2em;
+  margin-left: 2em;
+}
+
+ol.kome {
+  list-style: none;
+  counter-reset: number;
+}
+
+ol.kome li::before {
+  counter-increment: number;
+  content: "※" counter(number) " ";
+}
+
+.kome_red li::before {
+  color: #c00;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  font-size: 0;
+  line-height: 0;
+  border-width: 0px;
+  vertical-align: bottom;
+}
+
+img.middle {
+  vertical-align: middle;
+}
+
+.serif {
+  font-family:
+    "游明朝", "Yu Mincho", YuMincho, "ヒラギノ明朝 ProN W6", "HiraMinProN-W6", "HGS明朝E", "ＭＳ Ｐ明朝", "MS PMincho",
+    "MS 明朝", serif;
+}
+
+.fleft {
+  float: left;
+}
+
+.fright {
+  float: right;
+}
+
+.left {
+  text-align: left;
+}
+
+.center {
+  text-align: center;
+}
+
+.right {
+  text-align: right;
+}
+
+.big {
+  font-size: 1.3em;
+}
+
+.small {
+  font-size: 0.85em;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.marker {
+  background: linear-gradient(transparent 50%, #fff284 0%);
+}
+
+.clear {
+  clear: both;
+}
+
+.hide {
+  display: none;
+}
+
+.iblock {
+  display: inline-block;
+}
+
+.wide {
+  width: 100%;
+}
+
+.indent {
+  text-indent: -1em;
+  padding-left: 1em;
+}
+
+.shadow {
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+}
+
+.red,
+.err {
+  color: #c00;
+}
+
+.flex {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.flex-between {
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+}
+
+.flex-center {
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+.flex-align-center {
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.vh_ctr {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.link-disabled {
+  cursor: default;
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.is-fixed {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.is-hide {
+  transform: translateY(-100%);
+}
+
+.is-empty {
+  height: 0;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  border: none !important;
+}
+
+/* form ------------------------ */
+label {
+  display: inline-block;
+}
+
+select {
+  padding: 3px 8px 6px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+textarea {
+  border-radius: 3px;
+  padding: 4px 8px;
+  font-weight: inherit;
+}
+
+input[type="submit"],
+input[type="button"],
+button {
+  -webkit-box-sizing: content-box;
+  -webkit-appearance: button;
+  appearance: button;
+  border: none;
+  border-radius: 0;
+  box-sizing: border-box;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+input[type="submit"]::-webkit-search-decoration,
+input[type="button"]::-webkit-search-decoration {
+  display: none;
+}
+
+input[type="submit"]::focus,
+input[type="button"]::focus {
+  outline-offset: -2px;
+}
+
+input[type="text"],
+textarea,
+select {
+  margin: 3px 0;
+}
+
+input.t {
+  width: 15%;
+}
+
+input.s {
+  width: 30%;
+}
+
+input.m {
+  width: 60%;
+}
+
+input.l {
+  width: 96%;
+}
+
+textarea {
+  width: 96%;
+}
+
+label input {
+  margin: 0;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+select,
+textarea {
+  font-size: 16px;
+  font-family: inherit;
+  border: 1px solid #ccc;
+}
+
+/* 959px 以下 ------------------------ */
+@media screen and (max-width: 959px) {
+  .pc_only {
+    display: none;
+  }
+}
+
+/* 599px 以下 ------------------------ */
+@media screen and (max-width: 599px) {
+  .sp_none {
+    display: none;
+  }
+
+  input.t {
+    width: 30%;
+  }
+
+  input.s {
+    width: 60%;
+  }
+
+  input.m {
+    width: 98%;
+  }
+
+  /* 横スクロール */
+  .scrollWrap {
+    width: 100%;
+    padding-top: 20px;
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .scrollWrap>.scroll {
+    margin-bottom: 20px;
+    position: relative;
+  }
+
+  .scrollWrap>.scroll:before {
+    content: "横にスクロールできます→";
+    position: absolute;
+    top: -20px;
+    left: 0;
+    font-size: 13px;
+  }
+
+  .scrollWrap>.scroll>.hscroll {
+    width: 640px;
+  }
+}
+
+/* 600px 以上 ------------------------ */
+@media screen and (min-width: 600px) {
+  .sp_none {
+    display: block;
+  }
+
+  .sp_only {
+    display: none;
+  }
+}
+
+/* 960px 以上 ------------------------ */
+@media screen and (min-width: 960px) {
+  .pc_none {
+    display: none;
+  }
+
+  .txt_vertical {
+    -webkit-writing-mode: vertical-rl;
+    -ms-writing-mode: tb-rl;
+    writing-mode: vertical-rl;
+  }
+
+  /* 電話番号リンク PCで無効 */
+  a[href^="tel:"] {
+    cursor: default;
+    pointer-events: none;
+  }
+
+  /* hover scale */
+  a .scale {
+    -webkit-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
+  }
+
+  a:hover .scale {
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+  }
+}
