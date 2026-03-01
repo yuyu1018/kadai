@@ -759,7 +759,7 @@ footer {
       height: clamp(36.25rem, 5rem + 83.33vw, 45rem);
 
       .fv-img {
-        right: -32px;
+        right: -3.232vw;
         left: inherit;
 
         img {
