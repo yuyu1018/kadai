@@ -45,13 +45,12 @@ body {
   a {
     display: inline-block;
     position: relative;
-    padding: 4px 41px;
+    padding: 7px 42px;
     background-color: #000;
 
     &:hover {
       opacity: 0.8;
     }
-
 
     .link-more-text {
       font-size: 15px;
@@ -65,10 +64,19 @@ body {
   top: 50%;
   right: 16px;
   transform: translateY(-50%);
-  border-top: 4px solid transparent;
-  border-bottom: 4px solid transparent;
-  border-left: 5px solid currentColor;
   color: #fff;
+
+  &.arrow-wide {
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+    border-left: 5px solid currentColor;
+  }
+
+  &.arrow-slim {
+    border-top: 2px solid transparent;
+    border-bottom: 2px solid transparent;
+    border-left: 8px solid currentColor;
+  }
 }
 
 a {
@@ -93,13 +101,10 @@ header {
     position: absolute;
     top: 0;
     left: 0;
+    width: 210px;
     padding: 16px;
     background-color: #fff;
     z-index: 1;
-
-    img {
-      width: 210px;
-    }
   }
 
   .header-menu {
@@ -147,7 +152,7 @@ header {
       margin-left: 40px;
 
       a {
-        gap: 8px;
+        gap: 12px;
         height: 100%;
         padding: 16px;
         color: #fff;
@@ -247,7 +252,7 @@ header {
     .readmore {
       a {
         position: relative;
-        padding: 4px 18px;
+        padding: 4px 22px;
         background-color: #fff;
 
         .link-text {
@@ -276,9 +281,11 @@ header {
   margin-top: 48px;
 
   .slider-inner {
+    position: relative;
     .link-more-arrow {
       position: static;
       transform: none;
+      width: fit-content;
       border-top: 8px solid transparent;
       border-bottom: 8px solid transparent;
       border-left: 8px solid currentColor;
@@ -360,7 +367,7 @@ header {
   }
 
   .arrow-prev {
-    left: 0;
+    left: -53px;
 
     .link-more-arrow {
       transform: rotate(180deg);
@@ -368,7 +375,7 @@ header {
   }
 
   .arrow-next {
-    right: 0;
+    right: -53px;
   }
 }
 
@@ -397,7 +404,7 @@ header {
 
     .media-content {
       width: 50%;
-      padding: 0 60px;
+      padding: 0 59px;
 
       .media-info {
         p {
@@ -489,7 +496,6 @@ footer {
 
 /* PC（1200px以下） */
 @media (max-width: 1200px) {
-
   /* FV */
   .fv {
     .fv-inner {
@@ -556,9 +562,20 @@ footer {
 
   /* スライダー */
   .slider {
-    .slider-arrow {
-      width: clamp(1.5rem, 0.833rem + 1.39vw, 1.875rem);
-      height: clamp(3.5rem, 1.944rem + 3.24vw, 4.375rem);
+    .slider-inner {
+      position: static;
+      .slider-arrow {
+        width: clamp(1.5rem, 0.833rem + 1.39vw, 1.875rem);
+        height: clamp(3.5rem, 1.944rem + 3.24vw, 4.375rem);
+      }
+    }
+
+    .arrow-prev {
+      left: 0;
+    }
+
+    .arrow-next {
+      right: 0;
     }
   }
 
@@ -617,9 +634,7 @@ footer {
 
   header {
     .header-logo {
-      img {
-        width: clamp(6.875rem, -2.74rem + 25.64vw, 13.125rem);
-      }
+      width: clamp(8.75rem, 2.019rem + 17.95vw, 13.125rem);
     }
 
     .header-menu {
@@ -649,7 +664,9 @@ footer {
         width: 28px;
         height: 2px;
         background-color: #000;
-        transition: transform 0.3s ease, opacity 0.3s ease;
+        transition:
+          transform 0.3s ease,
+          opacity 0.3s ease;
       }
 
       &.is-open {
@@ -686,7 +703,8 @@ footer {
       height: 100%;
       background-color: #000;
       z-index: 1000;
-      padding: clamp(4rem, 0.429rem + 9.52vw, 5rem) clamp(1.5rem, -0.286rem + 4.76vw, 2rem) clamp(2rem, 0.214rem + 4.76vw, 2.5rem);
+      padding: clamp(4rem, 0.429rem + 9.52vw, 5rem) clamp(1.5rem, -0.286rem + 4.76vw, 2rem)
+        clamp(2rem, 0.214rem + 4.76vw, 2.5rem);
       transition: right 0.3s ease;
 
       &.is-open {
@@ -710,7 +728,7 @@ footer {
         margin-top: 24px;
 
         a {
-          gap: 8px;
+          gap: 12px;
           height: 100%;
           padding: 16px;
           color: #fff;
@@ -768,7 +786,6 @@ footer {
 
 /* タブレット */
 @media (max-width: 768px) {
-
   .inner {
     padding: 0 16px;
   }
@@ -786,7 +803,6 @@ footer {
   .link-more {
     margin-top: 32px;
   }
-
 
   /* ニュース */
   .news {
@@ -853,7 +869,7 @@ footer {
     margin-top: clamp(2.5rem, 0.714rem + 4.76vw, 3rem);
 
     .banner {
-      flex: 0 0 calc((100%) / 2);
+      flex: 0 0 calc((100% - 8px) / 2);
     }
 
     .slider-arrow {
@@ -868,7 +884,6 @@ footer {
   }
 
   .media-section {
-
     .media-inner {
       flex-direction: column;
       height: auto;
@@ -886,7 +901,8 @@ footer {
 
       .media-content {
         width: 100%;
-        padding: clamp(1.25rem, 0.357rem + 2.38vw, 1.5rem) clamp(0.75rem, -0.143rem + 2.38vw, 1rem) clamp(2rem, 0.214rem + 4.76vw, 2.5rem);
+        padding: clamp(1.25rem, 0.357rem + 2.38vw, 1.5rem) clamp(0.75rem, -0.143rem + 2.38vw, 1rem)
+          clamp(2rem, 0.214rem + 4.76vw, 2.5rem);
 
         .media-info {
           p {
@@ -1018,9 +1034,7 @@ footer {
       height: clamp(3rem, 1.857rem + 5.71vw, 4rem);
 
       .header-logo {
-        img {
-          width: clamp(4.063rem, 0.848rem + 16.07vw, 6.875rem);
-        }
+        width: clamp(6.25rem, 2.404rem + 10.26vw, 8.75rem);
       }
     }
 
@@ -1035,7 +1049,8 @@ footer {
     .drawer {
       width: 100%;
       max-width: inherit;
-      padding: clamp(2.5rem, 0.786rem + 8.57vw, 4rem) clamp(0.75rem, -0.107rem + 4.29vw, 1.5rem) clamp(1rem, -0.143rem + 5.71vw, 2rem);
+      padding: clamp(2.5rem, 0.786rem + 8.57vw, 4rem) clamp(0.75rem, -0.107rem + 4.29vw, 1.5rem)
+        clamp(1rem, -0.143rem + 5.71vw, 2rem);
 
       &.is-open {
         right: 0;
@@ -1171,13 +1186,11 @@ footer {
     }
   }
 
-
   /* 採用情報 */
   .recruit {
     margin-top: clamp(1.25rem, 0.393rem + 4.29vw, 2rem);
 
     .recruit-inner {
-
       &::before {
         content: "";
         height: clamp(6.875rem, 3.304rem + 17.86vw, 10rem);
