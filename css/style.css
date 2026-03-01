@@ -1222,7 +1222,7 @@ footer {
 
     .footer-nav {
       ul {
-        gap: clamp(0.5rem, 0.214rem + 1.43vw, 0.75rem);
+        gap: clamp(0.75rem, 0.464rem + 1.43vw, 1rem);
 
         li {
           padding-bottom: clamp(0.75rem, 0.464rem + 1.43vw, 1rem);
